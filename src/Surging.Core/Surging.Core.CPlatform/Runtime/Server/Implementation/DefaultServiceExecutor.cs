@@ -143,6 +143,10 @@ namespace Surging.Core.CPlatform.Runtime.Server.Implementation
                     _logger.LogError(exception, "执行本地逻辑时候发生了错误。");
                 resultMessage.ExceptionMessage = GetExceptionMessage(exception);
                 resultMessage.StatusCode = exception.HResult;
+            } 
+            finally
+            {
+                RpcContext.RemoveContext();
             }
         }
          

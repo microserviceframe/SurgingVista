@@ -81,7 +81,7 @@ namespace Surging.Core.DotNetty
             } 
             bootstrap
             .Option(ChannelOption.SoBacklog, AppConfig.ServerOptions.SoBacklog)
-            .ChildOption(ChannelOption.Allocator, PooledByteBufferAllocator.Default)
+            .ChildOption(ChannelOption.Allocator, PooledByteBufferAllocator.Default) 
             .Group(bossGroup, workerGroup)
             .ChildHandler(new ActionChannelInitializer<IChannel>(channel =>
             {
